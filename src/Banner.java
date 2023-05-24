@@ -17,7 +17,11 @@ public class Banner {
 
     void paint(Graphics g){
         g.setColor(Color.black);
+        Font currentFont = g.getFont();
+        Font newFont = currentFont.deriveFont(currentFont.getSize() * 2F);
+        g.setFont(newFont);
         g.drawString(this.string, this.x - 22, this.y);
+        g.setFont(currentFont);
 
     }
 }

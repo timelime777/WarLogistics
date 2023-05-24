@@ -90,32 +90,36 @@ public class MyPanel extends JPanel {
         this.WinScreen.change_color(Color.green);
         this.LoseScreen = new Button(w / 2, h / 2, 600, 250, "ВЫ ПРОИГРАЛИ!");
         this.LoseScreen.change_color(Color.red);
+        this.WinScreen.double_font();
+        this.LoseScreen.double_font();
+        this.Start_Button.double_font();
+        this.Edit_Button.double_font();
 
         this.AddDiffBtn = new Button(w / 2 + - 100, h / 2 - 350, 50, 50, " Доб.");
         this.RemoveDiffBtn = new Button(w / 2, h / 2 - 350, 50, 50, " Ум.");
-        this.DiffBanner = new Banner(w / 2 - 300, h / 2 - 350, "Сложность:" + Integer.toString(this.difficulty));
+        this.DiffBanner = new Banner(w / 2 - 450, h / 2 - 350, "Сложность:" + Integer.toString(this.difficulty));
 
         this.AddTileBtn = new Button(w / 2 + - 100, h / 2 - 150, 50, 50, " Доб.");
         this.RemoveTileBtn = new Button(w / 2, h / 2 - 150, 50, 50, " Ум.");
-        this.TileBanner = new Banner(w / 2 - 300, h / 2 - 150, "Кол-во городов: " + Integer.toString(this.num_of_tiles));
+        this.TileBanner = new Banner(w / 2 - 450, h / 2 - 150, "Кол-во городов: " + Integer.toString(this.num_of_tiles));
 
         this.AddPlayerBtn = new Button(w / 2 + - 100, h / 2 - 50, 50, 50, " Доб.");
         this.RemovePlayerBtn = new Button(w / 2, h / 2 - 50, 50, 50, " Ум.");
-        this.PlayerBanner = new Banner(w / 2 - 300, h / 2 - 50, "Кол-во Ботов: " + Integer.toString(this.num_of_players));
+        this.PlayerBanner = new Banner(w / 2 - 450, h / 2 - 50, "Кол-во Ботов: " + Integer.toString(this.num_of_players));
 
         this.AddCapBtn = new Button(w / 2 + - 100, h / 2 + 50, 50, 50, " Доб.");
         this.RemoveCapBtn = new Button(w / 2, h / 2 + 50, 50, 50, " Ум.");
-        this.CapBanner = new Banner(w / 2 - 300, h / 2 + 50, "Вместимость городов: " + Integer.toString(this.base_capacity));
+        this.CapBanner = new Banner(w / 2 - 450, h / 2 + 50, "Вместимость городов: " + Integer.toString(this.base_capacity));
 
         this.AddSizeBtn = new Button(w / 2 + - 100, h / 2 + 150, 50, 50, " Доб.");
         this.RemoveSizeBtn = new Button(w / 2, h / 2 + 150, 50, 50, " Ум.");
-        this.SizeBanner = new Banner(w / 2 - 300, h / 2 + 150, "Размер городов: " + Integer.toString(this.size));
+        this.SizeBanner = new Banner(w / 2 - 450, h / 2 + 150, "Размер городов: " + Integer.toString(this.size));
 
         this.AddSpeedBtn = new Button(w / 2 + - 100, h / 2 + 250, 50, 50, " Доб.");
         this.RemoveSpeedBtn = new Button(w / 2, h / 2 + 250, 50, 50, " Ум.");
-        this.SpeedBanner = new Banner(w / 2 - 300, h / 2 + 250, "Скорость игры: " + Integer.toString(this.speed));
+        this.SpeedBanner = new Banner(w / 2 - 450, h / 2 + 250, "Скорость игры: " + Integer.toString(this.speed));
 
-        this.GenBanner = new Banner(w / 2 - 300, h / 2 + 350, "Тип графа: ");
+        this.GenBanner = new Banner(w / 2 - 450, h / 2 + 350, "Тип графа: ");
         this.Tree = new Button(w / 2 + - 200, h / 2 + 350, 50, 50, "Дерево");
         this.Random = new Button(w / 2 + - 100, h / 2 + 350, 50, 50, "Случ.");
         this.All = new Button(w / 2, h / 2 + 350, 50, 50, "Полный");
@@ -124,10 +128,9 @@ public class MyPanel extends JPanel {
         this.Sticker.change_color(Color.green);
 
         this.SpecBtn = new Button(w / 2 + - 100, h / 2 - 250, 50, 50, this.spec_mod);
-        this.SpecBanner = new Banner(w / 2 - 300, h / 2 - 250, "Режим наблюдателя:");
+        this.SpecBanner = new Banner(w / 2 - 450, h / 2 - 250, "Режим наблюдателя:");
 
-        this.Settings = new Banner(w / 2 - 300, h / 2 - 450, "Настройки игры:" +
-                " (Игра нестабильна при маленьких городах или их большом количестве или большой вместимости!)");
+        this.Settings = new Banner(w / 2 - 450, h / 2 - 450, "Настройки игры:");
     }
 
     @Override
@@ -307,12 +310,12 @@ public class MyPanel extends JPanel {
                     this.Sticker.change_color(Color.green);
                 }
 
-                this.DiffBanner = new Banner(w / 2 - 300, h / 2 - 350, "Сложность:" + Integer.toString(this.difficulty));
-                this.TileBanner = new Banner(w / 2 - 300, h / 2 - 150, "Кол-во городов: " + Integer.toString(this.num_of_tiles));
-                this.PlayerBanner = new Banner(w / 2 - 300, h / 2 - 50, "Кол-во Ботов: " + Integer.toString(this.num_of_players));
-                this.CapBanner = new Banner(w / 2 - 300, h / 2 + 50, "Вместимость городов: " + Integer.toString(this.base_capacity));
-                this.SizeBanner = new Banner(w / 2 - 300, h / 2 + 150, "Размер городов: " + Integer.toString(this.size));
-                this.SpeedBanner = new Banner(w / 2 - 300, h / 2 + 250, "Скорость игры: " + Integer.toString(this.speed));
+                this.DiffBanner = new Banner(w / 2 - 450, h / 2 - 350, "Сложность:" + Integer.toString(this.difficulty));
+                this.TileBanner = new Banner(w / 2 - 450, h / 2 - 150, "Кол-во городов: " + Integer.toString(this.num_of_tiles));
+                this.PlayerBanner = new Banner(w / 2 - 450, h / 2 - 50, "Кол-во Ботов: " + Integer.toString(this.num_of_players));
+                this.CapBanner = new Banner(w / 2 - 450, h / 2 + 50, "Вместимость городов: " + Integer.toString(this.base_capacity));
+                this.SizeBanner = new Banner(w / 2 - 450, h / 2 + 150, "Размер городов: " + Integer.toString(this.size));
+                this.SpeedBanner = new Banner(w / 2 - 450, h / 2 + 250, "Скорость игры: " + Integer.toString(this.speed));
 
                 this.AddTileBtn.paint(g);
                 this.RemoveTileBtn.paint(g);

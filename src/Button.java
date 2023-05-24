@@ -6,6 +6,8 @@ public class Button {
     int width;
     int height;
 
+    int double_font = 0;
+
     String string;
 
     Color color = Color.white;
@@ -20,15 +22,31 @@ public class Button {
         this.string = s;
     }
 
+    void double_font(){
+        this.double_font += 1;
+        this.double_font = double_font % 2;
+    }
+
     void change_color(Color c){this.color = c;}
 
     void paint(Graphics g){
-        g.setColor(this.color);
-        g.fillRoundRect(this.x - this.width / 2, this.y - this.height / 2, this.width, this.height, this.width / 10, this.height / 5);
-        g.setColor(Color.black);
-        g.drawRoundRect(this.x - this.width / 2, this.y - this.height / 2, this.width, this.height, this.width / 10, this.height / 5);
-        g.drawString(this.string, this.x - 22, this.y);
-
+        if (this.double_font == 0){
+            g.setColor(this.color);
+            g.fillRoundRect(this.x - this.width / 2, this.y - this.height / 2, this.width, this.height, this.width / 10, this.height / 5);
+            g.setColor(Color.black);
+            g.drawRoundRect(this.x - this.width / 2, this.y - this.height / 2, this.width, this.height, this.width / 10, this.height / 5);
+            g.drawString(this.string, this.x - 22, this.y);}
+        else{
+            Font currentFont = g.getFont();
+            Font newFont = currentFont.deriveFont(currentFont.getSize() * 2F);
+            g.setFont(newFont);
+            g.setColor(this.color);
+            g.fillRoundRect(this.x - this.width / 2, this.y - this.height / 2, this.width, this.height, this.width / 10, this.height / 5);
+            g.setColor(Color.black);
+            g.drawRoundRect(this.x - this.width / 2, this.y - this.height / 2, this.width, this.height, this.width / 10, this.height / 5);
+            g.drawString(this.string, this.x - 56, this.y);
+            g.setFont(currentFont);
+        }
     }
 
     void onMouseHit(int mouseX, int mouseY){
